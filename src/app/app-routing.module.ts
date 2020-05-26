@@ -11,6 +11,30 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
+  {
+    path: 'home-prestador',
+    loadChildren: () => import('./home-prestador/home-prestador.module').then( m => m.HomePrestadorPageModule)
+  },
+  {
+    path: 'servicos-prestador',
+    loadChildren: () => import('./servicos-prestador/servicos-prestador.module').then( m => m.ServicosPrestadorPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  }
 ];
 
 @NgModule({
